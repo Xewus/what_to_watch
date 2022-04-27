@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block title %} Добавить мнение о фильме {% endblock %}
+{% block content %}
+<main>
+  <section class="container my-5">
+    <div class="row">
+      <h1>Добавить мнение о фильме</h1>
+      <div class="col-12 col-lg-7 my-5">
+        {% with messages = get_flashed_messages() %}
+          {% if messages %}
+            {% for message in messages %}
+              <!-- какие-то действия с текстом сообщения -->
+              {{ message }}
+            {% endfor %}
+          {% endif %}
+        {% endwith %}
+        {% include "includes/form.html" %}
+      </div>
+      <div class="col-12 col-lg-5">
+        <img
+          class="img-fluid mx-auto d-block"
+          src="{{ url_for('static', filename='img/illustration.png') }}"
+          alt=""
+        />
+      </div>
+    </div>
+  </section>
+</main>
+{% endblock %}
