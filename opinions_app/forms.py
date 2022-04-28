@@ -29,6 +29,7 @@ class OpinionForm(FlaskForm):
         label='Автор мнения',
         validators=(
             Length(1, 64),
+            Optional()
         )
     )
     submit = SubmitField(
